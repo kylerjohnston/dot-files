@@ -9,13 +9,14 @@
 
 dir=~/dot-files
 olddir=~/dot-files/old
-files=".tmux .tmux.conf .vim .vimrc .zprezto .zpreztorc .zshrc"
+files="tmux.conf vimrc zpreztorc"
 
 mkdir -p $olddir
 
 echo "Moving old dot files to $olddir and creating symlinks for the new files to the home directory."
 for file in $files; do
-	mv ~/.$file $olddir
+	echo "Moving ~/.$file to $olddir/$file"
+	mv -f ~/.$file $olddir
 	echo "Creating a symlink for $file"
-	ln -s $dir/$file ~/$file
+	ln -s $dir/$file ~/.$file
 done
