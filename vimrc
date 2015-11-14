@@ -8,6 +8,18 @@ set nu
 " A whole world of 256 colors
 let &t_Co=256
 
+" Set text wrapping
+" Set soft word wrap
+set wrap
+set linebreak
+set nolist  " list disables linebreak
+" Prevent vim from adding newlines
+set textwidth=0
+set wrapmargin=0
+
+" Highlight long lines
+set colorcolumn=81
+
 " Vundle stuff
 " including plugins to install
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -34,13 +46,19 @@ nnoremap <C-H> <C-W><C-H>
 let python_highlight_all=1
 syntax on
 au BufNewFile,BufRead *.py
-    \ set tabstop=4 |
-    \ set softtabstop=4 |
-    \ set shiftwidth=4 |
-    \ set textwidth=79 |
-    \ set expandtab |
-    \ set autoindent |
-    \ set fileformat=unix |
+	\ set tabstop=4 |
+	\ set softtabstop=4 |
+	\ set shiftwidth=4 |
+	\ set textwidth=79 |
+	\ set expandtab |
+	\ set autoindent |
+	\ set fileformat=unix |
+
+" Markdown and txt options
+au BufNewFile,BufRead *.md,*.txt
+	\ set textwidth=80 |
+	\ set formatoptions+=t |
+	\ set wrapmargin=2
 
 " Copy and paste from clipboard with sane keybindings
 nmap <C-V> :set paste<CR>:r !pbpaste<CR>:set nopaste<CR>
@@ -67,7 +85,6 @@ au BufNewFile,BufRead *.js, *.html, *.css
 " Base 16 theme settings
 set background=dark
 colorscheme base16-railscasts
-
 highlight clear SignColumn
 highlight VertSplit    ctermbg=236
 highlight ColorColumn  ctermbg=237
@@ -82,3 +99,5 @@ highlight Visual       ctermbg=3   ctermfg=0
 highlight Pmenu        ctermbg=240 ctermfg=12
 highlight PmenuSel     ctermbg=3   ctermfg=1
 highlight SpellBad     ctermbg=0   ctermfg=1
+
+
