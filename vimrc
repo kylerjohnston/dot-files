@@ -20,6 +20,9 @@ set wrapmargin=0
 " Highlight long lines
 set colorcolumn=81
 
+" Remap <C-U> to fix syntax highlight when folding fucks it up
+nnoremap <C-U> :syntax sync fromstart<cr>:redraw!<cr>
+
 " Vundle stuff
 " including plugins to install
 set rtp+=~/.vim/bundle/Vundle.vim
