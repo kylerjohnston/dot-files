@@ -20,8 +20,8 @@ set wrapmargin=0
 " Highlight long lines
 set colorcolumn=81
 
-" Remap <C-U> to fix syntax highlight when folding fucks it up
-nnoremap <C-U> :syntax sync fromstart<cr>:redraw!<cr>
+" Remap <C-F> to fix syntax highlight when folding fucks it up
+nnoremap <C-F> :syntax sync fromstart<cr>:redraw!<cr>
 
 " Vundle stuff
 " including plugins to install
@@ -56,12 +56,6 @@ au BufNewFile,BufRead *.py
 	\ set expandtab |
 	\ set autoindent |
 	\ set fileformat=unix |
-
-" Markdown and txt options
-au BufNewFile,BufRead *.md,*.txt
-	\ set textwidth=80 |
-	\ set formatoptions+=t |
-	\ set wrapmargin=2
 
 " Copy and paste from clipboard with sane keybindings
 nmap <C-V> :set paste<CR>:r !pbpaste<CR>:set nopaste<CR>
