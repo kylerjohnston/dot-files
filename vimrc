@@ -18,7 +18,7 @@ set textwidth=0
 set wrapmargin=0
 
 " Highlight long lines
-set colorcolumn=81
+set colorcolumn=80
 
 " Remap <C-F> to fix syntax highlight when folding fucks it up
 nnoremap <C-F> :syntax sync fromstart<cr>:redraw!<cr>
@@ -43,6 +43,11 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+" Set tab spacing for non-python stuff
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 
 " Turn on Python syntax highlighting
 " and indentation
