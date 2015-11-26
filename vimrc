@@ -45,6 +45,7 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " Set tab spacing for non-python stuff
+set expandtab
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
