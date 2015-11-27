@@ -2,6 +2,9 @@
 set backspace=indent,eol,start
 set nocompatible
 
+" Enable search highlighting
+set hlsearch
+
 " Display line numbers
 set nu
 
