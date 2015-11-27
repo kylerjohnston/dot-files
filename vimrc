@@ -40,6 +40,9 @@ Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'chriskempson/base16-vim'
 
+" Remap ESC to jj in insert mode
+inoremap jj <Esc>
+
 " These are for remapping pane navigation.
 " Don't really do much work with panes but eh 
 nnoremap <C-J> <C-W><C-J>
