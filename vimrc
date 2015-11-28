@@ -15,10 +15,10 @@ let &t_Co=256
 " Set soft word wrap
 set wrap
 set linebreak
-set nolist  " list disables linebreak
-" Prevent vim from adding newlines
-set textwidth=0
+set nolist  " list can disable linebreak
+set textwidth=0 " Prevent vim from adding newlines
 set wrapmargin=0
+set columns=86 " Words should wrap before then?
 
 " Highlight long lines
 set colorcolumn=80
