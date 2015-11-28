@@ -24,7 +24,7 @@ set wrapmargin=0
 set colorcolumn=80
 
 " Remap <C-F> to fix syntax highlight when folding fucks it up
-nnoremap <C-F> :syntax sync fromstart<cr>:redraw!<cr>
+nnoremap <C-Q> :syntax sync fromstart<cr>:redraw!<cr>
 
 " Vundle stuff
 " including plugins to install
