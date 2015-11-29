@@ -23,8 +23,9 @@ set wrapmargin=0
 set colorcolumn=80
 
 
-" Remap <C-F> to fix syntax highlight when folding fucks it up
-nnoremap <C-Q> :syntax sync fromstart<cr>:redraw!<cr>
+" Remap ,f to fix syntax highlight when folding fucks it up
+let mapleader = ","
+nmap <silent> <leader>f :syntax sync fromstart<CR>:redraw!<CR>
 
 " Vundle stuff
 " including plugins to install
@@ -43,24 +44,22 @@ Plugin 'chriskempson/base16-vim'
 " Remap ESC to jj in insert mode
 inoremap jj <Esc>
 
-" These are for remapping pane navigation.
-" Don't really do much work with panes but eh 
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+" Control + [nav] to navigate wrapped lines
+vmap <C-j> gj
+vmap <C-k> gk
+vmap <C-4> g$
+vmap <C-6> g^
+vmap <C-0> g^
+nmap <C-j> gj
+nmap <C-k> gk
+nmap <C-4> g$
+nmap <C-6> g^
+nmap <C-0> g^
 
-" Command + [nav] to navigate wrapped lines
-vmap <D-j> gj
-vmap <D-k> gk
-vmap <D-4> g$
-vmap <D-6> g^
-vmap <D-0> g^
-nmap <D-j> gj
-nmap <D-k> gk
-nmap <D-4> g$
-nmap <D-6> g^
-nmap <D-0> g^
+" Enable spell checking with ,s
+let mapleader = ","
+nmap <silent> <leader>s :set spell!<CR>
+set spelllang=en_us
 
 " Set generic tab spacing 
 set expandtab
