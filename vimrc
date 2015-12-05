@@ -43,6 +43,8 @@ Plugin 'scrooloose/syntastic'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'chriskempson/base16-vim'
+Plugin 'tpope/vim-vinegar'
+Plugin 'mkarmona/colorsbox'
 
 " Remap ESC to jj in insert mode
 inoremap jj <Esc>
@@ -110,12 +112,12 @@ au BufNewFile,BufRead *.js, *.html, *.css
     \ set softtabstop=2
     \ set shiftwidth=2
 
-au BufNewFile,BufRead *.md
+au BufNewFile,BufRead *.md, *.markdown
       \ set filetype=markdown
 
 " Base 16 theme settings
 set background=dark
-colorscheme base16-railscasts
+colorscheme colorsbox-stnight 
 highlight clear SignColumn
 highlight VertSplit    ctermbg=236
 highlight ColorColumn  ctermbg=237
