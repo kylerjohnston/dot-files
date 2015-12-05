@@ -47,6 +47,11 @@ Plugin 'chriskempson/base16-vim'
 " Remap ESC to jj in insert mode
 inoremap jj <Esc>
 
+" Filetype and syntax highlighting
+set nocompatible
+filetype indent plugin on
+syntax on
+
 " Control + [nav] to navigate wrapped lines
 vmap <C-j> gj
 vmap <C-k> gk
@@ -104,6 +109,9 @@ au BufNewFile,BufRead *.js, *.html, *.css
     \ set tabstop=2
     \ set softtabstop=2
     \ set shiftwidth=2
+
+au BufNewFile,BufRead *.md
+      \ set filetype=markdown
 
 " Base 16 theme settings
 set background=dark
