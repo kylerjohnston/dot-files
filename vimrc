@@ -2,6 +2,9 @@
 set backspace=indent,eol,start
 set nocompatible
 
+" Set GUI font
+set guifont=Menlo\ Regular:h12
+
 " Enable search highlighting
 set hlsearch
 
