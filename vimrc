@@ -112,8 +112,8 @@ au BufNewFile,BufRead *.js, *.html, *.css
     \ set softtabstop=2
     \ set shiftwidth=2
 
-au BufNewFile,BufRead *.md, *.markdown
-      \ set filetype=markdown
+" au BufNewFile,BufRead *.md, *.markdown
+"      \ set filetype=markdown
 
 " Base 16 theme settings
 set background=dark
