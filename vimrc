@@ -39,12 +39,10 @@ call vundle#end()
 filetype plugin indent on
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
-Plugin 'scrooloose/syntastic'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
-Plugin 'chriskempson/base16-vim'
-Plugin 'tpope/vim-vinegar'
 Plugin 'mkarmona/colorsbox'
+Plugin 'chrisbra/Colorizer'
 
 " Remap ESC to jj in insert mode
 inoremap jj <Esc>
