@@ -112,4 +112,4 @@ au BufNewFile,BufRead *.js, *.html, *.css
 
 " Base 16 theme settings
 set background=dark
-colorscheme colorsbox-stnight 
+colorscheme colorsbox-material
