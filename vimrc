@@ -3,7 +3,7 @@ set backspace=indent,eol,start
 set nocompatible
 
 " Set GUI stuff 
-set guifont=Menlo\ Regular:h12
+set guifont=Inconsolata-g:h12
 set guioptions-=r
 set guioptions-=l
 
