@@ -54,7 +54,6 @@ inoremap jj <Esc>
 
 " Filetype and syntax highlighting
 set nocompatible
-filetype indent plugin on
 syntax on
 
 " Control + [nav] to navigate wrapped lines
