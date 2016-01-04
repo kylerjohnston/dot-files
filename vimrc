@@ -3,9 +3,9 @@ set backspace=indent,eol,start
 set nocompatible
 
 " Set GUI stuff 
-set guifont=Inconsolata-g:h12
+set guifont=Source\ Code\ Pro\ Light:h12
 set guioptions-=r
-set guioptions-=l
+set guioptions-=L
 
 
 " Enable search highlighting
@@ -46,6 +46,8 @@ Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'mkarmona/colorsbox'
 Plugin 'chrisbra/Colorizer'
+Plugin 'reedes/vim-textobj-quote'
+Plugin 'kana/vim-textobj-user'
 
 " Remap ESC to jj in insert mode
 inoremap jj <Esc>
@@ -108,11 +110,17 @@ nnoremap <space> za
 set encoding=utf-8
 
 " For CSS/HTML/javascript
-au BufNewFile,BufRead *.js, *.html, *.css
-    \ set tabstop=2
-    \ set softtabstop=2
-    \ set shiftwidth=2
+au BufNewFile,BufRead *.js,*.html,*.css
+    \ set tabstop=2 |
+    \ set softtabstop=2 |
+    \ set shiftwidth=2 |
+    \ ColorHighlight
 
 " Base 16 theme settings
 set background=dark
 colorscheme colorsbox-material
+
+" For textobj_quote stuff
+autocmd FileType markdown 
+  \ call textobj#quote#init() |
+  \ map <silent> <leader>qc <Plug>ReplaceWithCurly
