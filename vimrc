@@ -25,10 +25,6 @@ set nolist  " list can disable linebreak
 set textwidth=0 " Prevent vim from adding newlines
 set wrapmargin=0
 
-" Highlight long lines
-set colorcolumn=80
-
-
 " Remap ,f to fix syntax highlight when folding fucks it up
 let mapleader = ","
 nmap <silent> <leader>f :syntax sync fromstart<CR>:redraw!<CR>
@@ -48,6 +44,7 @@ Plugin 'mkarmona/colorsbox'
 Plugin 'chrisbra/Colorizer'
 Plugin 'reedes/vim-textobj-quote'
 Plugin 'kana/vim-textobj-user'
+Plugin 'junegunn/goyo.vim'
 
 " Remap ESC to jj in insert mode
 inoremap jj <Esc>
@@ -91,6 +88,7 @@ au BufNewFile,BufRead *.py
 	\ set expandtab |
 	\ set autoindent |
 	\ set fileformat=unix |
+  \ set colorcolumn=80
 
 " Copy and paste from clipboard with sane keybindings
 nmap <C-V> :set paste<CR>:r !pbpaste<CR>:set nopaste<CR>
@@ -122,4 +120,6 @@ colorscheme colorsbox-material
 " For textobj_quote stuff
 autocmd FileType markdown 
   \ call textobj#quote#init() |
-  \ map <silent> <leader>qc <Plug>ReplaceWithCurly
+  \ map <silent> <leader>qc <Plug>ReplaceWithCurly |
+  \ :Goyo 80
+
