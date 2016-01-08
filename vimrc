@@ -2,7 +2,7 @@
 set backspace=indent,eol,start
 set nocompatible
 
-" Set GUI stuff 
+" Set GUI stuff for Macvim
 set guifont=Source\ Code\ Pro\ Light:h12
 set guioptions-=r
 set guioptions-=L
@@ -39,18 +39,18 @@ filetype plugin indent on
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
 Plugin 'mkarmona/colorsbox'
 Plugin 'chrisbra/Colorizer'
 Plugin 'reedes/vim-textobj-quote'
 Plugin 'kana/vim-textobj-user'
 Plugin 'junegunn/goyo.vim'
+Plugin 'vim-pandoc/vim-pandoc'
+Plugin 'vim-pandoc/vim-pandoc-syntax'
 
 " Remap ESC to jj in insert mode
 inoremap jj <Esc>
 
 " Filetype and syntax highlighting
-set nocompatible
 syntax on
 
 " Control + [nav] to navigate wrapped lines
@@ -117,9 +117,10 @@ au BufNewFile,BufRead *.js,*.html,*.css
 set background=dark
 colorscheme colorsbox-material
 
-" For textobj_quote stuff
+" For Markdown writing
 autocmd FileType markdown 
   \ call textobj#quote#init() |
   \ map <silent> <leader>qc <Plug>ReplaceWithCurly |
-  \ :Goyo 80
+  \ :Goyo 80 |
+  \ set spell!
 
