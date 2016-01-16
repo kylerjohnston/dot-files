@@ -46,6 +46,7 @@ Plugin 'kana/vim-textobj-user'
 Plugin 'junegunn/goyo.vim'
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
+Plugin 'kristijanhusak/vim-hybrid-material'
 
 " Remap ESC to jj in insert mode
 inoremap jj <Esc>
@@ -114,8 +115,7 @@ au BufNewFile,BufRead *.js,*.html,*.css
     \ ColorHighlight
 
 " Base 16 theme settings
-set background=dark
-colorscheme colorsbox-material
+colorscheme hybrid_material
 
 " For Markdown writing
 autocmd FileType markdown 
