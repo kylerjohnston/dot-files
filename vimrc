@@ -114,8 +114,10 @@ au BufNewFile,BufRead *.js,*.html,*.css
     \ set shiftwidth=2 |
     \ ColorHighlight
 
-" Base 16 theme settings
+" colorscheme settings
+let g:hybrid_use_iTerm_colors=1
 colorscheme hybrid_material
+
 
 " For Markdown writing
 autocmd FileType markdown 
