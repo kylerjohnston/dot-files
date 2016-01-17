@@ -115,8 +115,12 @@ au BufNewFile,BufRead *.js,*.html,*.css
     \ ColorHighlight
 
 " colorscheme settings
-let g:hybrid_use_iTerm_colors=1
-colorscheme hybrid_material
+if has("gui_running")
+  colorscheme colorsbox-material
+else
+  let g:hybrid_use_iTerm_colors=1
+  colorscheme hybrid_material
+endif
 
 
 " For Markdown writing
