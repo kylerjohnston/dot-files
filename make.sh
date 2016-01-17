@@ -9,7 +9,7 @@
 
 dir=~/dot-files
 olddir=~/dot-files/old
-files="vimrc tmux.conf zpreztorc"
+files="vimrc tmux.conf"
 
 mkdir -p $olddir
 
