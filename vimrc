@@ -47,24 +47,13 @@ Plugin 'junegunn/goyo.vim'
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'kristijanhusak/vim-hybrid-material'
+Plugin 'vimwiki/vimwiki'
 
 " Remap ESC to jj in insert mode
 inoremap jj <Esc>
 
 " Filetype and syntax highlighting
 syntax on
-
-" Control + [nav] to navigate wrapped lines
-vmap <C-j> gj
-vmap <C-k> gk
-vmap <C-4> g$
-vmap <C-6> g^
-vmap <C-0> g^
-nmap <C-j> gj
-nmap <C-k> gk
-nmap <C-4> g$
-nmap <C-6> g^
-nmap <C-0> g^
 
 " Enable spell checking with ,s
 let mapleader = ","
@@ -85,7 +74,7 @@ au BufNewFile,BufRead *.py
 	\ set tabstop=4 |
 	\ set softtabstop=4 |
 	\ set shiftwidth=4 |
-	"\ set textwidth=79 |
+	\ set textwidth=79 |
 	\ set expandtab |
 	\ set autoindent |
 	\ set fileformat=unix |
@@ -129,3 +118,8 @@ autocmd FileType markdown
   \ map <silent> <leader>qc <Plug>ReplaceWithCurly |
   \ nmap <silent> <leader>g :Goyo 80<CR> |
 
+" Vimwiki stuff
+let g:vimwiki_list = [{'path': '$HOME/ownCloud/wiki',
+      \ 'syntax': 'markdown',
+      \ 'ext': '.md'}]
+let g:vimwiki_dir_link = 'index'
