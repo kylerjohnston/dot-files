@@ -127,6 +127,5 @@ endif
 autocmd FileType markdown 
   \ call textobj#quote#init() |
   \ map <silent> <leader>qc <Plug>ReplaceWithCurly |
-  \ :Goyo 80 |
-  \ set spell!
+  \ nmap <silent> <leader>g :Goyo 80<CR> |
 
