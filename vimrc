@@ -29,6 +29,9 @@ set wrapmargin=0
 let mapleader = ","
 nmap <silent> <leader>f :syntax sync fromstart<CR>:redraw!<CR>
 
+" Remap ,p to make a pdf from markdown
+nmap <silent> <leader>p :Pandoc pdf --latex-engine=xelatex -V mainfont:Roboto
+
 " Vundle stuff
 " including plugins to install
 set rtp+=~/.vim/bundle/Vundle.vim
