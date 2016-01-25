@@ -30,7 +30,7 @@ let mapleader = ","
 nmap <silent> <leader>f :syntax sync fromstart<CR>:redraw!<CR>
 
 " Remap ,p to make a pdf from markdown
-nmap <silent> <leader>p :Pandoc pdf --latex-engine=xelatex -V mainfont:Roboto
+nmap <silent> <leader>p :Pandoc pdf --latex-engine=xelatex -V mainfont:Roboto<CR>
 
 " Vundle stuff
 " including plugins to install
