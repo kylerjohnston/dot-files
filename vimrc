@@ -50,7 +50,6 @@ Plugin 'junegunn/goyo.vim'
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'kristijanhusak/vim-hybrid-material'
-Plugin 'vimwiki/vimwiki'
 
 " Remap ESC to jj in insert mode
 inoremap jj <Esc>
@@ -120,9 +119,3 @@ autocmd FileType markdown
   \ call textobj#quote#init() |
   \ map <silent> <leader>qc <Plug>ReplaceWithCurly |
   \ nmap <silent> <leader>g :Goyo 80<CR> |
-
-" Vimwiki stuff
-let g:vimwiki_list = [{'path': '$HOME/ownCloud/wiki',
-      \ 'syntax': 'markdown',
-      \ 'ext': '.md'}]
-let g:vimwiki_dir_link = 'index'
