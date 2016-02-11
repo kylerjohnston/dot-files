@@ -30,7 +30,7 @@ let mapleader = ","
 nmap <silent> <leader>f :syntax sync fromstart<CR>:redraw!<CR>
 
 " Remap ,p to make a pdf from markdown
-nmap <silent> <leader>p :Pandoc pdf --latex-engine=xelatex -V mainfont:Roboto<CR>
+nmap <silent> <leader>p :Pandoc pdf --latex-engine=xelatex<CR>
 
 " Vundle stuff
 " including plugins to install
@@ -50,6 +50,7 @@ Plugin 'junegunn/goyo.vim'
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'kristijanhusak/vim-hybrid-material'
+Plugin 'leafgarland/typescript-vim'
 
 " Remap ESC to jj in insert mode
 inoremap jj <Esc>
@@ -119,3 +120,7 @@ autocmd FileType markdown
   \ call textobj#quote#init() |
   \ map <silent> <leader>qc <Plug>ReplaceWithCurly |
   \ nmap <silent> <leader>g :Goyo 80<CR> |
+
+" Set *.ts to typescript
+au BufNewFile,BufRead *.ts
+  \ set filetype=typescript
