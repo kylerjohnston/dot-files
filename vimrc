@@ -3,7 +3,7 @@ set backspace=indent,eol,start
 set nocompatible
 
 " Set GUI stuff for Macvim
-set guifont=Source\ Code\ Pro\ Light:h12
+set guifont=Source\ Code\ Pro:h12
 set guioptions-=r
 set guioptions-=L
 
@@ -44,8 +44,6 @@ Plugin 'vim-scripts/indentpython.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'mkarmona/colorsbox'
 Plugin 'chrisbra/Colorizer'
-Plugin 'reedes/vim-textobj-quote'
-Plugin 'kana/vim-textobj-user'
 Plugin 'junegunn/goyo.vim'
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
@@ -59,7 +57,7 @@ inoremap jj <Esc>
 syntax on
 
 " Enable spell checking with ,s
-let mapleader = ","
+let mapleader = " "
 nmap <silent> <leader>s :set spell!<CR>
 set spelllang=en_us
 
@@ -74,13 +72,13 @@ set shiftwidth=2
 let python_highlight_all=1
 syntax on
 au BufNewFile,BufRead *.py
-	\ set tabstop=4 |
-	\ set softtabstop=4 |
-	\ set shiftwidth=4 |
-	\ set expandtab |
-	\ set autoindent |
-	\ set fileformat=unix |
-  \ set colorcolumn=80
+	\ setlocal tabstop=4 |
+	\ setlocal softtabstop=4 |
+	\ setlocal shiftwidth=4 |
+	\ setlocal expandtab |
+	\ setlocal autoindent |
+	\ setlocal fileformat=unix |
+  \ setlocal colorcolumn=80
 
 " Copy and paste from clipboard with sane keybindings
 nmap <C-V> :set paste<CR>:r !pbpaste<CR>:set nopaste<CR>
@@ -100,9 +98,9 @@ set encoding=utf-8
 
 " For CSS/HTML/javascript
 au BufNewFile,BufRead *.js,*.html,*.css
-    \ set tabstop=2 |
-    \ set softtabstop=2 |
-    \ set shiftwidth=2 |
+    \ setlocal tabstop=2 |
+    \ setlocal softtabstop=2 |
+    \ setlocal shiftwidth=2 |
     \ ColorHighlight
 
 " colorscheme settings
@@ -113,13 +111,6 @@ else
   colorscheme hybrid_material
 endif
 
-
-" For Markdown writing
-autocmd FileType markdown 
-  \ call textobj#quote#init() |
-  \ map <silent> <leader>qc <Plug>ReplaceWithCurly |
-  \ nmap <silent> <leader>g :Goyo 80<CR> |
-
 " Set *.ts to typescript
 au BufNewFile,BufRead *.ts
-  \ set filetype=typescript
+  \ setlocal filetype=typescript
