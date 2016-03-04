@@ -49,6 +49,8 @@ Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'kristijanhusak/vim-hybrid-material'
 Plugin 'leafgarland/typescript-vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 
 " Remap ESC to jj in insert mode
 inoremap jj <Esc>
@@ -97,11 +99,12 @@ nnoremap <space> za
 set encoding=utf-8
 
 " For CSS/HTML/javascript
+let g:jsx_ext_required=0
 au BufNewFile,BufRead *.js,*.html,*.css
     \ setlocal tabstop=2 |
     \ setlocal softtabstop=2 |
     \ setlocal shiftwidth=2 |
-    \ ColorHighlight
+    \ ColorHighlight |
 
 " colorscheme settings
 if has("gui_running")
