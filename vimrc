@@ -36,9 +36,8 @@ nmap <silent> <leader>p :Pandoc pdf --latex-engine=xelatex<CR>
 " including plugins to install
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+
 Plugin 'gmarik/Vundle.vim'
-call vundle#end()
-filetype plugin indent on
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'godlygeek/tabular'
@@ -48,9 +47,12 @@ Plugin 'junegunn/goyo.vim'
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'kristijanhusak/vim-hybrid-material'
-Plugin 'leafgarland/typescript-vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
+Plugin 'posva/vim-vue'
+
+call vundle#end()
+filetype plugin indent on
 
 " Remap ESC to jj in insert mode
 inoremap jj <Esc>
@@ -100,7 +102,7 @@ set encoding=utf-8
 
 " For CSS/HTML/javascript
 let g:jsx_ext_required=0
-au BufNewFile,BufRead *.js,*.html,*.css
+au BufNewFile,BufRead *.html,*.css
     \ setlocal tabstop=2 |
     \ setlocal softtabstop=2 |
     \ setlocal shiftwidth=2 |
@@ -111,6 +113,7 @@ if has("gui_running")
   colorscheme colorsbox-material
 else
   let g:hybrid_use_iTerm_colors=1
+  set background=dark
   colorscheme hybrid_material
 endif
 
