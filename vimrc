@@ -38,18 +38,17 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
+" Python plugins
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
+" For lining things up?
 Plugin 'godlygeek/tabular'
 Plugin 'mkarmona/colorsbox'
-Plugin 'chrisbra/Colorizer'
 Plugin 'junegunn/goyo.vim'
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'kristijanhusak/vim-hybrid-material'
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
-Plugin 'posva/vim-vue'
+Plugin 'dracula/vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -100,14 +99,6 @@ nnoremap <space> za
 " Set the default encoding to UTF-8
 set encoding=utf-8
 
-" For CSS/HTML/javascript
-let g:jsx_ext_required=0
-au BufNewFile,BufRead *.html,*.css
-    \ setlocal tabstop=2 |
-    \ setlocal softtabstop=2 |
-    \ setlocal shiftwidth=2 |
-    \ ColorHighlight |
-
 " colorscheme settings
 if has("gui_running")
   colorscheme colorsbox-material
@@ -116,7 +107,3 @@ else
   set background=dark
   colorscheme hybrid_material
 endif
-
-" Set *.ts to typescript
-au BufNewFile,BufRead *.ts
-  \ setlocal filetype=typescript
