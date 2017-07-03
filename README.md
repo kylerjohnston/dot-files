@@ -1,6 +1,6 @@
 # README
 
-This is a collection of dot files for vim and zsh (zprezto). Probably only relevant to me, but feel free to steal anything you like.
+This is a collection of dot files for vim and tmux. Probably only relevant to me, but feel free to steal anything you like.
 
 ## Installation
 
@@ -8,9 +8,8 @@ This is a collection of dot files for vim and zsh (zprezto). Probably only relev
 
 You'll need to install this stuff first:
 
-* `vim` and `zsh`, obviously.
+* `vim` and `tmux`, obviously.
 * [Vundle](https://github.com/VundleVim/Vundle.vim) for `vim`. After installing open vim and run `:PluginInstall` to install everything else in the vimrc.
-* For `zsh` you will need to install [Prezto](https://github.com/sorin-ionescu/prezto). I only include a zpreztorc file here because the only thing I really change in the zshrc is the PATH, and what I put there depends on which machine I'm using.
 
 ### Installation
 To install, clone the repo to your home directory and run the bash script `make.sh`:
