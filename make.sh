@@ -9,7 +9,7 @@
 
 dir=~/dot-files
 olddir=~/dot-files/old
-files="vimrc tmux.conf"
+files="profile bashrc vimrc inputrc tmux.conf"
 
 mkdir -p $olddir
 

@@ -49,6 +49,8 @@ Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'kristijanhusak/vim-hybrid-material'
 Plugin 'dracula/vim'
+Plugin 'xolox/vim-misc' " Required for vim-notes
+Plugin 'xolox/vim-notes'
 
 call vundle#end()
 filetype plugin indent on
@@ -107,3 +109,6 @@ else
   set background=dark
   colorscheme hybrid_material
 endif
+
+" vim-notes customization
+let g:notes_directories = ['~/Documents/Notes']

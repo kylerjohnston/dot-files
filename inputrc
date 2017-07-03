@@ -1,0 +1,2 @@
+# Make autocomplete case-insensitive
+set completion-ignore-case on
