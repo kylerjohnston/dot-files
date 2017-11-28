@@ -40,25 +40,34 @@
 (setq-default org-catch-invisible-edits 'smart)
 (setq-default org-todo-keywords
 	      '((sequence "TODO(t)" "IN PROGRESS(p)" "|" "DONE(d)")))
-(setq-default org-long-done 'time)
+(setq-default org-log-done 'time)
 (setq org-directory "~/org")
 (setq org-default-notes-file(concat org-directory "/inbox.org"))
 (setq org-capture-templates
       '(("t" "Todo" entry (file "~/org/inbox.org")
-	 "* TODO %?\n")
+	 "** TODO %?\n")
 	("n" "Note" entry (file "~/org/inbox.org")
-	 "* %?\n")))
+	 "** %?\n")))
+(setq org-refile-targets '((org-agenda-files :maxlevel . 3)))
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cc" 'org-capture)
 (global-set-key "\C-cb" 'org-iswitchb)
 
 ;; appearance
-(load-theme 'solarized-light t)
+;;(load-theme 'solarized-light t)
+(use-package solarized-theme
+  :ensure t
+  :init
+  (setq solarized-use-variable-pitch nil))
+  (setq solarized-distinct-doc-face nil)
+  :config
+  (load-theme 'solarized-light t)
 (add-to-list 'default-frame-alist '(font . "Source Code Pro:pixelsize=15:foundry=ADBO:weight=normal:slant=normal:width=normal:spacing=100:scalable=true"))
 ;; no scrollbars or toolbars
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
+(global-hl-line-mode +1)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -67,7 +76,7 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" default)))
+    ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" default)))
  '(package-selected-packages
    (quote
     (solarized-theme base16-theme evil-visual-mark-mode))))
