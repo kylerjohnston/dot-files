@@ -41,16 +41,7 @@ Plugin 'gmarik/Vundle.vim'
 " Python plugins
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
-" For lining things up?
-Plugin 'godlygeek/tabular'
-Plugin 'mkarmona/colorsbox'
-Plugin 'junegunn/goyo.vim'
-Plugin 'vim-pandoc/vim-pandoc'
-Plugin 'vim-pandoc/vim-pandoc-syntax'
-Plugin 'kristijanhusak/vim-hybrid-material'
-Plugin 'dracula/vim'
-Plugin 'xolox/vim-misc' " Required for vim-notes
-Plugin 'xolox/vim-notes'
+Plugin 'altercation/vim-colors-solarized'
 
 call vundle#end()
 filetype plugin indent on
@@ -103,11 +94,11 @@ set encoding=utf-8
 
 " colorscheme settings
 if has("gui_running")
-  colorscheme colorsbox-material
+  colorscheme solarized
 else
   let g:hybrid_use_iTerm_colors=1
   set background=dark
-  colorscheme hybrid_material
+  colorscheme solarized
 endif
 
 " vim-notes customization
