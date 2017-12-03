@@ -53,6 +53,7 @@
 	 "* TODO %^{Payee} due $%^{Amount due}\nDEADLINE: %^t"
 	 :immediate-finish)))
 (setq org-refile-targets '((org-agenda-files :maxlevel . 3)))
+(setq org-archive-location (concat "archive/archive-" (format-time-string "%Y%m" (current-time)) ".org_archive::"))
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cc" 'org-capture)
