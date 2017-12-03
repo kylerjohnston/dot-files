@@ -44,25 +44,39 @@
 (setq org-directory "~/org")
 (setq org-default-notes-file(concat org-directory "/inbox.org"))
 (setq org-capture-templates
-      '(("t" "Todo" entry (file "~/org/inbox.org")
-	 "** TODO %?\n")
+      '(("t" "Todo" entry (file+headline "~/org/tasks.org" "Unsorted")
+	 "* TODO %^{What do you need to do?}"
+	 :immediate-finish)
 	("n" "Note" entry (file "~/org/inbox.org")
-	 "** %?\n")))
+	 "* %^{Title}\n%?\n%U")
+	("b" "Bill due" entry (file+headline "~/org/tasks.org" "Bills")
+	 "* TODO %^{Payee} due $%^{Amount due}\nDEADLINE: %^t"
+	 :immediate-finish)))
 (setq org-refile-targets '((org-agenda-files :maxlevel . 3)))
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cc" 'org-capture)
 (global-set-key "\C-cb" 'org-iswitchb)
 
+;; ledger
+(use-package ledger-mode
+  :ensure t
+  :init
+  (setq ledger-clear-whole-transactions 1)
+
+  :config
+  (add-to-list 'evil-emacs-state-modes 'ledger-report-mode)
+  :mode "\\.dat\\'")
+
 ;; appearance
 ;;(load-theme 'solarized-light t)
 (use-package solarized-theme
   :ensure t
   :init
-  (setq solarized-use-variable-pitch nil))
+  (setq solarized-use-variable-pitch nil)
   (setq solarized-distinct-doc-face nil)
   :config
-  (load-theme 'solarized-light t)
+  (load-theme 'solarized-light t))
 (add-to-list 'default-frame-alist '(font . "Source Code Pro:pixelsize=15:foundry=ADBO:weight=normal:slant=normal:width=normal:spacing=100:scalable=true"))
 ;; no scrollbars or toolbars
 (scroll-bar-mode -1)
