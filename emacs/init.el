@@ -59,15 +59,12 @@
 (global-set-key "\C-cc" 'org-capture)
 (global-set-key "\C-cb" 'org-iswitchb)
 
-;; ledger
-(use-package ledger-mode
+;; company mode
+(use-package company
   :ensure t
   :init
-  (setq ledger-clear-whole-transactions 1)
-
-  :config
-  (add-to-list 'evil-emacs-state-modes 'ledger-report-mode)
-  :mode "\\.dat\\'")
+  (company-mode 1)
+  (add-hook 'after-init-hook 'global-company-mode))
 
 ;; appearance
 ;;(load-theme 'solarized-light t)
