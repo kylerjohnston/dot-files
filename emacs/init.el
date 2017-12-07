@@ -39,7 +39,7 @@
 ;; don't let org edit things under collapsed headings
 (setq-default org-catch-invisible-edits 'smart)
 (setq-default org-todo-keywords
-	      '((sequence "TODO(t)" "IN PROGRESS(p)" "|" "DONE(d)")))
+	      '((sequence "TODO(t)" "IN PROGRESS(p)" "WAITING(w)" "|" "DONE(d)")))
 (setq-default org-log-done 'time)
 (setq org-directory "~/org")
 (setq org-default-notes-file(concat org-directory "/inbox.org"))
@@ -75,7 +75,7 @@
   (setq solarized-distinct-doc-face nil)
   :config
   (load-theme 'solarized-light t))
-(add-to-list 'default-frame-alist '(font . "Source Code Pro:pixelsize=15:foundry=ADBO:weight=normal:slant=normal:width=normal:spacing=100:scalable=true"))
+(add-to-list 'default-frame-alist '(font . "Source Code Pro Medium:pixelsize=15:foundry=ADBO:weight=normal:slant=normal:width=normal:spacing=100:scalable=true"))
 ;; no scrollbars or toolbars
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
