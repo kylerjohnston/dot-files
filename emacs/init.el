@@ -84,7 +84,10 @@
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
 (global-hl-line-mode +1)
-
+(use-package org-bullets
+  :ensure t
+  :config
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
