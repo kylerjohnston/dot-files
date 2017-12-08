@@ -39,7 +39,11 @@
 ;; don't let org edit things under collapsed headings
 (setq-default org-catch-invisible-edits 'smart)
 (setq-default org-todo-keywords
-	      '((sequence "TODO(t)" "IN PROGRESS(p)" "WAITING(w)" "|" "DONE(d)")))
+	      '((sequence "TODO(t)" "IN PROGRESS(p)" "WAITING(w)" "|" "DONE(d)" "CLOSED(c)")))
+(setq org-todo-keyword-faces
+      '(("TODO" . org-warning) ("IN PROGRESS" . org-todo)
+	("WAITING" org-agenda-dimmed-todo-face)
+	("CLOSED" org-done) ("DONE" org-done)))
 (setq-default org-log-done 'time)
 (setq org-directory "~/org")
 (setq org-default-notes-file(concat org-directory "/inbox.org"))
