@@ -62,6 +62,49 @@
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cc" 'org-capture)
 (global-set-key "\C-cb" 'org-iswitchb)
+(setq org-hide-emphasis-markers t)
+
+;;; variable-width fonts for org mode and others
+'(variable-pitch ((t (:family "Helvetica" :height 160))))
+(defun set-buffer-variable-pitch ()
+  (interactive)
+  (variable-pitch-mode t)
+  (setq line-spacing 3)
+  (set-face-attribute 'org-table nil :inherit 'fixed-pitch)
+  (set-face-attribute 'org-code nil :inherit 'fixed-pitch)
+  (set-face-attribute 'org-block nil :inherit 'fixed-pitch)
+  (set-face-attribute 'org-block-background nil :inherit 'fixed-pitch)
+  )
+
+(add-hook 'org-mode-hook 'set-buffer-variable-pitch)
+(add-hook 'eww-mode-hook 'set-buffer-variable-pitch)
+(add-hook 'markdown-mode-hook 'set-buffer-variable-pitch)
+(add-hook 'Info-mode-hook 'set-buffer-variable-pitch)
+
+;; customize header colors
+
+
+(let* ((variable-tuple (cond ((x-list-fonts "Helvetica") '(:font "Helvetica"))
+                             ((x-list-fonts "Verdana")         '(:font "Verdana"))
+                             ((x-family-fonts "Sans Serif")    '(:family "Sans Serif"))
+                             (nil (warn "Cannot find a Sans Serif Font.  Install Source Sans Pro."))))
+       (base-font-color     (face-foreground 'default nil 'default))
+       (headline           `(:inherit default :weight bold :foreground "#657b83")))
+
+  (custom-theme-set-faces 'user
+                          `(org-level-8 ((t (,@headline ,@variable-tuple))))
+                          `(org-level-7 ((t (,@headline ,@variable-tuple))))
+                          `(org-level-6 ((t (,@headline ,@variable-tuple))))
+                          `(org-level-5 ((t (,@headline ,@variable-tuple))))
+                          `(org-level-4 ((t (,@headline ,@variable-tuple :height 1.1))))
+                          `(org-level-3 ((t (,@headline ,@variable-tuple :height 1.25))))
+                          `(org-level-2 ((t (,@headline ,@variable-tuple :height 1.5))))
+                          `(org-level-1 ((t (,@headline ,@variable-tuple :height 1.75))))
+                          `(org-document-title ((t (,@headline ,@variable-tuple :height 1.5 :underline nil))))))
+
+
+;; exporting
+(setq org-export-with-smart-quotes t)
 
 ;; company mode
 (use-package company
@@ -69,6 +112,14 @@
   :init
   (company-mode 1)
   (add-hook 'after-init-hook 'global-company-mode))
+
+(use-package ledger-mode
+  :ensure t
+  :init
+  (setq ledger-clear-whole-transactions 1)
+  :config
+  (add-to-list 'evil-emacs-state-modes 'ledger-report-mode)
+  :mode ("\\.dat\\'"))
 
 ;; appearance
 ;;(load-theme 'solarized-light t)
@@ -98,7 +149,7 @@
     ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" default)))
  '(package-selected-packages
    (quote
-    (solarized-theme base16-theme evil-visual-mark-mode))))
+    (olivetti darkroom solarized-theme base16-theme evil-visual-mark-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
