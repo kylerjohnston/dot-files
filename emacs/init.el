@@ -49,7 +49,7 @@
 (setq org-default-notes-file(concat org-directory "/inbox.org"))
 (setq org-capture-templates
       '(("t" "Todo" entry (file+headline "~/org/tasks.org" "Unsorted")
-	 "* TODO %^{What do you need to do?}"
+	 "* TODO %^{What do you need to do?}\n%?"
 	 :immediate-finish)
 	("n" "Note" entry (file "~/org/inbox.org")
 	 "* %^{Title}\n%?\n%U")
@@ -63,6 +63,11 @@
 (global-set-key "\C-cc" 'org-capture)
 (global-set-key "\C-cb" 'org-iswitchb)
 (setq org-hide-emphasis-markers t)
+
+(use-package org-bullets
+  :ensure t
+  :config
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 
 ;;; variable-width fonts for org mode and others
 '(variable-pitch ((t (:family "Roboto" :height 160))))
@@ -113,16 +118,7 @@
   (company-mode 1)
   (add-hook 'after-init-hook 'global-company-mode))
 
-(use-package ledger-mode
-  :ensure t
-  :init
-  (setq ledger-clear-whole-transactions 1)
-  :config
-  (add-to-list 'evil-emacs-state-modes 'ledger-report-mode)
-  :mode ("\\.dat\\'"))
-
 ;; appearance
-;;(load-theme 'solarized-light t)
 (use-package base16-theme
   :ensure t
   :config
@@ -132,10 +128,7 @@
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
 (global-hl-line-mode +1)
-(use-package org-bullets
-  :ensure t
-  :config
-  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+(setq bell-volume 0)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
