@@ -41,7 +41,7 @@
 (setq-default org-todo-keywords
 	      '((sequence "TODO(t)" "IN PROGRESS(p)" "WAITING(w)" "|" "DONE(d)" "CLOSED(c)")))
 (setq org-todo-keyword-faces
-      '(("TODO" . org-warning) ("IN PROGRESS" . org-todo)
+      '(("TODO" . org-warning) ("IN PROGRESS" . font-lock-builtin-face)
 	("WAITING" org-agenda-dimmed-todo-face)
 	("CLOSED" org-done) ("DONE" org-done)))
 (setq-default org-log-done 'time)
@@ -65,7 +65,7 @@
 (setq org-hide-emphasis-markers t)
 
 ;;; variable-width fonts for org mode and others
-'(variable-pitch ((t (:family "Helvetica" :height 160))))
+'(variable-pitch ((t (:family "Roboto" :height 160))))
 (defun set-buffer-variable-pitch ()
   (interactive)
   (variable-pitch-mode t)
@@ -84,7 +84,7 @@
 ;; customize header colors
 
 
-(let* ((variable-tuple (cond ((x-list-fonts "Helvetica") '(:font "Helvetica"))
+(let* ((variable-tuple (cond ((x-list-fonts "Roboto") '(:font "Roboto"))
                              ((x-list-fonts "Verdana")         '(:font "Verdana"))
                              ((x-family-fonts "Sans Serif")    '(:family "Sans Serif"))
                              (nil (warn "Cannot find a Sans Serif Font.  Install Source Sans Pro."))))
@@ -123,13 +123,10 @@
 
 ;; appearance
 ;;(load-theme 'solarized-light t)
-(use-package solarized-theme
+(use-package base16-theme
   :ensure t
-  :init
-  (setq solarized-use-variable-pitch nil)
-  (setq solarized-distinct-doc-face nil)
   :config
-  (load-theme 'solarized-light t))
+  (load-theme 'base16-tomorrow-night t))
 (add-to-list 'default-frame-alist '(font . "Source Code Pro Medium:pixelsize=15:foundry=ADBO:weight=normal:slant=normal:width=normal:spacing=100:scalable=true"))
 ;; no scrollbars or toolbars
 (scroll-bar-mode -1)
@@ -146,13 +143,21 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" default)))
+    ("3380a2766cf0590d50d6366c5a91e976bdc3c413df963a0ab9952314b4577299" "cea3ec09c821b7eaf235882e6555c3ffa2fd23de92459751e18f26ad035d2142" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" default)))
  '(package-selected-packages
    (quote
-    (olivetti darkroom solarized-theme base16-theme evil-visual-mark-mode))))
+    (color-theme-sanityinc-tomorrow zenburn-theme olivetti darkroom solarized-theme base16-theme evil-visual-mark-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(org-document-title ((t (:inherit default :weight bold :foreground "#657b83" :font "Roboto" :height 1.5 :underline nil))))
+ '(org-level-1 ((t (:inherit default :weight bold :foreground "#657b83" :font "Roboto" :height 1.75))))
+ '(org-level-2 ((t (:inherit default :weight bold :foreground "#657b83" :font "Roboto" :height 1.5))))
+ '(org-level-3 ((t (:inherit default :weight bold :foreground "#657b83" :font "Roboto" :height 1.25))))
+ '(org-level-4 ((t (:inherit default :weight bold :foreground "#657b83" :font "Roboto" :height 1.1))))
+ '(org-level-5 ((t (:inherit default :weight bold :foreground "#657b83" :font "Roboto"))))
+ '(org-level-6 ((t (:inherit default :weight bold :foreground "#657b83" :font "Roboto"))))
+ '(org-level-7 ((t (:inherit default :weight bold :foreground "#657b83" :font "Roboto"))))
+ '(org-level-8 ((t (:inherit default :weight bold :foreground "#657b83" :font "Roboto")))))
