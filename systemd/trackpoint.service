@@ -1,0 +1,9 @@
+[Unit]
+Description = Set trackpoint sensitivity
+
+[Service]
+ExecStart=/home/krj/.local/bin/trackpoint.sh
+Type=oneshot
+
+[Install]
+WantedBy=multi-user.target

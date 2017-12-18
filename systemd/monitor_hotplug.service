@@ -1,0 +1,11 @@
+[Unit]
+Description = Monitor hotplug
+
+[Service]
+type = simple
+RemainAfterExit = no
+User = krj
+ExecStart = /home/krj/.local/bin/monitor-hotplug.sh
+
+[Install]
+WantedBy = multi-user.target
