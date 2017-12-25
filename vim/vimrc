@@ -11,9 +11,6 @@ set guioptions-=L
 " Enable search highlighting
 set hlsearch
 
-" Display line numbers
-set nu
-
 " A whole world of 256 colors
 let &t_Co=256
 
@@ -41,7 +38,7 @@ Plugin 'gmarik/Vundle.vim'
 " Python plugins
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
-Plugin 'altercation/vim-colors-solarized'
+Plugin 'chriskempson/base16-vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -94,12 +91,9 @@ set encoding=utf-8
 
 " colorscheme settings
 if has("gui_running")
-  colorscheme solarized
+  colorscheme base16-tomorrow-night
 else
   let g:hybrid_use_iTerm_colors=1
   set background=dark
-  colorscheme solarized
+  colorscheme base16-tomorrow-night
 endif
-
-" vim-notes customization
-let g:notes_directories = ['~/Documents/Notes']
