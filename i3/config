@@ -8,7 +8,7 @@
 # i3 config file (v4)
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
-set $wallpaper /home/krj/img/wallpapers/designs/1511043919889.jpg
+set $wallpaper /home/krj/.wallpaper.png
 set $lockscreen /home/krj/img/lockscreens/pineapple.png
 
 set $mod Mod4
