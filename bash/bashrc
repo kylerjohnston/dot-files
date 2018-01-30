@@ -2,3 +2,6 @@ export PS1="\u@\[\e[35m\]\h\[\e[m\] \[\e[36m\]\W\[\e[m\]\[\e[37m\] \[\e[31m\]>\[
 export PATH=$PATH:/home/krj/.local/bin
 export HISTCONTROL=ignoredups
 export EDITOR=/usr/bin/vim
+
+alias ll='ls -al --color=always'
+alias ls='ls --color=always'
