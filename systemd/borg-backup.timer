@@ -1,9 +1,0 @@
-[Unit]
-Description = Borg backup schedule
-
-[Timer]
-OnCalendar = hourly
-Persistent = true
-
-[Install]
-WantedBy = timers.target
