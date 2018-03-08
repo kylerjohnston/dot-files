@@ -7,7 +7,7 @@ allow_bold = true
 dynamic_title = true
 urgent_on_bell = true
 clickable_url = true
-font = Source Code Pro Medium 10
+font = Source Code Pro Medium 11
 scrollback_lines = 10000
 search_wrap = true
 #icon_name = terminal
@@ -38,7 +38,7 @@ filter_unmatched_urls = true
 foreground      = #c5c8c6
 foreground_bold = #e0e0e0
 cursor          = #e0e0e0
-background      = #1d1f21
+background      = rgba(29, 31, 33, 1)
 
 # 16 color space
 

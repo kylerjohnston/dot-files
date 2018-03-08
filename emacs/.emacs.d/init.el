@@ -15,6 +15,14 @@
 (require 'diminish)
 (require 'bind-key)
 
+(use-package markdown-mode
+  :ensure t
+  :commands (markdown-mode gfm-mode)
+  :mode (("README\\.md\\'" . gfm-mode)
+	 ("\\.md\\'" . markdown-mode)
+	 ("\\.markdown\\'" . markdown-mode))
+  :init (setq markdown-command "multimarkdown"))
+
 ;; Evil mode
 (use-package evil
   :ensure t
@@ -139,7 +147,7 @@
     ("3380a2766cf0590d50d6366c5a91e976bdc3c413df963a0ab9952314b4577299" "cea3ec09c821b7eaf235882e6555c3ffa2fd23de92459751e18f26ad035d2142" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" default)))
  '(package-selected-packages
    (quote
-    (pkgbuild-mode yaml-mode color-theme-sanityinc-tomorrow zenburn-theme olivetti darkroom solarized-theme base16-theme evil-visual-mark-mode))))
+    (markdown-mode pkgbuild-mode yaml-mode color-theme-sanityinc-tomorrow zenburn-theme olivetti darkroom solarized-theme base16-theme evil-visual-mark-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
