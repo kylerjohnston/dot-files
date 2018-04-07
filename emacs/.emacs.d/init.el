@@ -119,18 +119,11 @@
 ;; exporting
 (setq org-export-with-smart-quotes t)
 
-;; company mode
-(use-package company
-  :ensure t
-  :init
-  (company-mode 1)
-  (add-hook 'after-init-hook 'global-company-mode))
-
 ;; appearance
-(use-package base16-theme
+(use-package solarized-theme
   :ensure t
   :config
-  (load-theme 'base16-tomorrow-night t))
+  (load-theme 'solarized-light t))
 (add-to-list 'default-frame-alist '(font . "Source Code Pro Medium:pixelsize=15:foundry=ADBO:weight=normal:slant=normal:width=normal:spacing=100:scalable=true"))
 ;; no scrollbars or toolbars
 (scroll-bar-mode -1)
