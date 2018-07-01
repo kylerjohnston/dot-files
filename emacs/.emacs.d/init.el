@@ -72,11 +72,6 @@
 (global-set-key "\C-cb" 'org-iswitchb)
 (setq org-hide-emphasis-markers t)
 
-(use-package org-bullets
-  :ensure t
-  :config
-  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
-
 ;;; variable-width fonts for org mode and others
 '(variable-pitch ((t (:family "Roboto" :height 160))))
 (defun set-buffer-variable-pitch ()
@@ -155,3 +150,5 @@
  '(org-level-6 ((t (:inherit default :weight bold :foreground "#657b83" :font "Roboto"))))
  '(org-level-7 ((t (:inherit default :weight bold :foreground "#657b83" :font "Roboto"))))
  '(org-level-8 ((t (:inherit default :weight bold :foreground "#657b83" :font "Roboto")))))
+
+(setq browse-url-browser-function 'browse-url-firefox)
