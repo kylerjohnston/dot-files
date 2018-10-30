@@ -115,15 +115,11 @@
 (setq org-export-with-smart-quotes t)
 
 ;; appearance
-(use-package solarized-theme
-  :ensure t
-  :config
-  (load-theme 'solarized-light t))
+(load-theme 'tango-dark t)
 (add-to-list 'default-frame-alist '(font . "Source Code Pro Medium:pixelsize=15:foundry=ADBO:weight=normal:slant=normal:width=normal:spacing=100:scalable=true"))
 ;; no scrollbars or toolbars
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
-(global-hl-line-mode +1)
 (setq bell-volume 0)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -132,10 +128,10 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("3380a2766cf0590d50d6366c5a91e976bdc3c413df963a0ab9952314b4577299" "cea3ec09c821b7eaf235882e6555c3ffa2fd23de92459751e18f26ad035d2142" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" default)))
+    ("713f898dd8c881c139b62cf05b7ac476d05735825d49006255c0a31f9a4f46ab" "3380a2766cf0590d50d6366c5a91e976bdc3c413df963a0ab9952314b4577299" "cea3ec09c821b7eaf235882e6555c3ffa2fd23de92459751e18f26ad035d2142" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" default)))
  '(package-selected-packages
    (quote
-    (ansible markdown-mode pkgbuild-mode yaml-mode color-theme-sanityinc-tomorrow zenburn-theme olivetti darkroom solarized-theme base16-theme evil-visual-mark-mode))))
+    (tangotango-theme ansible markdown-mode pkgbuild-mode yaml-mode color-theme-sanityinc-tomorrow zenburn-theme olivetti darkroom solarized-theme base16-theme evil-visual-mark-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
