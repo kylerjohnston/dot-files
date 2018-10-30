@@ -69,7 +69,7 @@
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cc" 'org-capture)
-(global-set-key "\C-cb" 'org-iswitchb)
+(global-set-key "\C-cb" 'org-switchb)
 (setq org-hide-emphasis-markers t)
 
 ;;; variable-width fonts for org mode and others
@@ -141,14 +141,14 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(org-document-title ((t (:inherit default :weight bold :foreground "#657b83" :font "Roboto" :height 1.5 :underline nil))))
- '(org-level-1 ((t (:inherit default :weight bold :foreground "#657b83" :font "Roboto" :height 1.75))))
- '(org-level-2 ((t (:inherit default :weight bold :foreground "#657b83" :font "Roboto" :height 1.5))))
- '(org-level-3 ((t (:inherit default :weight bold :foreground "#657b83" :font "Roboto" :height 1.25))))
- '(org-level-4 ((t (:inherit default :weight bold :foreground "#657b83" :font "Roboto" :height 1.1))))
- '(org-level-5 ((t (:inherit default :weight bold :foreground "#657b83" :font "Roboto"))))
- '(org-level-6 ((t (:inherit default :weight bold :foreground "#657b83" :font "Roboto"))))
- '(org-level-7 ((t (:inherit default :weight bold :foreground "#657b83" :font "Roboto"))))
- '(org-level-8 ((t (:inherit default :weight bold :foreground "#657b83" :font "Roboto")))))
+ '(org-document-title ((t (:inherit default :weight bold :foreground "#657b83" :family "Sans Serif" :height 1.5 :underline nil))))
+ '(org-level-1 ((t (:inherit default :weight bold :foreground "#657b83" :family "Sans Serif" :height 1.75))))
+ '(org-level-2 ((t (:inherit default :weight bold :foreground "#657b83" :family "Sans Serif" :height 1.5))))
+ '(org-level-3 ((t (:inherit default :weight bold :foreground "#657b83" :family "Sans Serif" :height 1.25))))
+ '(org-level-4 ((t (:inherit default :weight bold :foreground "#657b83" :family "Sans Serif" :height 1.1))))
+ '(org-level-5 ((t (:inherit default :weight bold :foreground "#657b83" :family "Sans Serif"))))
+ '(org-level-6 ((t (:inherit default :weight bold :foreground "#657b83" :family "Sans Serif"))))
+ '(org-level-7 ((t (:inherit default :weight bold :foreground "#657b83" :family "Sans Serif"))))
+ '(org-level-8 ((t (:inherit default :weight bold :foreground "#657b83" :family "Sans Serif")))))
 
 (setq browse-url-browser-function 'browse-url-firefox)
