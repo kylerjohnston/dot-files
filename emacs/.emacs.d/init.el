@@ -14,6 +14,7 @@
   (require 'use-package))
 (require 'bind-key)
 
+;; markdown-mode
 (use-package markdown-mode
   :ensure t
   :commands (markdown-mode gfm-mode)
@@ -56,13 +57,11 @@
 (setq org-default-notes-file(concat org-directory "/inbox.org"))
 (setq org-capture-templates
       '(("t" "Todo" entry (file+headline "~/org/tasks.org" "Unsorted")
-	 "* TODO %^{What do you need to do?}\n%?"
-	 :immediate-finish)
+	 "* TODO %^{What do you need to do?}\n%?")
 	("n" "Note" entry (file "~/org/inbox.org")
 	 "* %^{Title}\n%?\n%U")
 	("b" "Bill due" entry (file+headline "~/org/tasks.org" "Bills")
-	 "* TODO %^{Payee} due $%^{Amount due}\nDEADLINE: %^t"
-	 :immediate-finish)))
+	 "* TODO %^{Payee} due $%^{Amount due}\nDEADLINE: %^t")))
 (setq org-refile-targets '((org-agenda-files :maxlevel . 3)))
 (setq org-archive-location (concat "archive/archive-" (format-time-string "%Y%m" (current-time)) ".org_archive::"))
 (global-set-key "\C-cl" 'org-store-link)
@@ -79,9 +78,7 @@
   (setq line-spacing 3)
   (set-face-attribute 'org-table nil :inherit 'fixed-pitch)
   (set-face-attribute 'org-code nil :inherit 'fixed-pitch)
-  (set-face-attribute 'org-block nil :inherit 'fixed-pitch)
-  (set-face-attribute 'org-block-background nil :inherit 'fixed-pitch)
-  )
+  (set-face-attribute 'org-block nil :inherit 'fixed-pitch))
 
 (add-hook 'org-mode-hook 'set-buffer-variable-pitch)
 (add-hook 'eww-mode-hook 'set-buffer-variable-pitch)
