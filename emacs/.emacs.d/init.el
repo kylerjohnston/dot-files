@@ -117,6 +117,10 @@
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
 (setq bell-volume 0)
+
+; Open tasks.org
+(setq initial-buffer-choice "~/org/tasks.org")
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
