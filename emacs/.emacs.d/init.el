@@ -131,6 +131,9 @@
 (tool-bar-mode -1)
 (setq bell-volume 0)
 
+;; start server
+(server-start)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
