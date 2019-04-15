@@ -18,3 +18,4 @@ export EDITOR=/usr/bin/vim
 alias ll='ls -al --color=always'
 alias ls='ls --color=always'
 alias grep='grep --color=auto'
+alias e='emacsclient'
