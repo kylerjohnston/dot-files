@@ -9,9 +9,8 @@ fi
 # export SYSTEMD_PAGER=
 
 # User specific aliases and functions
-
-#export PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-export PATH=$PATH:/home/kylejohnston/.local/bin:/home/kylejohnston/repos/it_scripts/crashplan
+export PS1='\n[\u@\h \[\e[34m\]\w\[\e[m\]]\n$ '
+export PATH=$PATH:/home/kjohnston/.local/bin:/home/kjohnston/bin
 export HISTCONTROL=ignoredups
 export EDITOR=/usr/bin/vim
 
