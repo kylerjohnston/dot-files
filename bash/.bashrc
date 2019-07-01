@@ -9,7 +9,14 @@ fi
 # export SYSTEMD_PAGER=
 
 # User specific aliases and functions
-export PS1='\n[\u@\h \[\e[34m\]\w\[\e[m\]]\n$ '
+function hg_branch {
+    hg status > /dev/null 2>&1
+    if [ $? -eq 0 ]; then
+       printf " $(hg branch)"
+    fi
+}
+
+export PS1='\n[\u@\h \[\e[94m\]\w\[\e[m\]\[\e[92m\]$(hg_branch)\e[m\]]\n$ '
 export PATH=$PATH:/home/kjohnston/.local/bin:/home/kjohnston/bin
 export HISTCONTROL=ignoredups
 export EDITOR=/usr/bin/vim
