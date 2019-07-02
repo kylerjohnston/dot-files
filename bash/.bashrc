@@ -16,7 +16,7 @@ function _branch {
     fi
     git branch > /dev/null 2>&1
     if [ $? -eq 0 ]; then
-	printf " \e[90mgit:\e[m\e[92m$(git branch)\e[m"
+	printf " \e[90mgit:\e[m\e[92m$(git branch | grep \* | cut -d ' ' -f2)\e[m"
     fi
 }
 
