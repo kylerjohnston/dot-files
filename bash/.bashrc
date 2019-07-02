@@ -9,14 +9,18 @@ fi
 # export SYSTEMD_PAGER=
 
 # User specific aliases and functions
-function hg_branch {
+function _branch {
     hg status > /dev/null 2>&1
     if [ $? -eq 0 ]; then
        printf " \e[90mhg:\e[m\e[92m$(hg branch)\e[m"
     fi
+    git branch > /dev/null 2>&1
+    if [ $? -eq 0 ]; then
+	printf " \e[90mgit:\e[m\e[92m$(git branch)\e[m"
+    fi
 }
 
-export PS1='\n[\u@\h \[\e[94m\]\w\[\e[m\]$(hg_branch)]\n$ '
+export PS1='\n[\u@\h \[\e[94m\]\w\[\e[m\]$(_branch)]\n$ '
 export PATH=$PATH:/home/kjohnston/.local/bin:/home/kjohnston/bin
 export HISTCONTROL=ignoredups
 export EDITOR=/usr/bin/vim
