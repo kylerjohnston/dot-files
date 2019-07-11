@@ -20,7 +20,7 @@ function _branch {
     fi
 }
 
-export PS1='\n[\u@\h \[\e[94m\]\w\[\e[m\]$(_branch)]\n$ '
+export PS1='[\u@\h \[\e[94m\]\w\[\e[m\]$(_branch)]\n$ '
 export PATH=$PATH:/home/kjohnston/.local/bin:/home/kjohnston/bin
 export HISTCONTROL=ignoredups
 export EDITOR=/usr/bin/vim
