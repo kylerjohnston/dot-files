@@ -22,8 +22,18 @@ function _branch {
 
 export PS1='[\u@\h \[\e[94m\]\w\[\e[m\]$(_branch)]\n$ '
 export PATH=$PATH:/home/kjohnston/.local/bin:/home/kjohnston/bin
-export HISTCONTROL=ignoredups
 export EDITOR=/usr/bin/vim
+
+# History stuff
+# Ignores redundant or space commands
+export HISTCONTROL=ignoreboth
+export HISTSIZE=10000
+export HISTFILESIZE=2000000
+export HISTIGNORE='ll:ls:pwd:clear:history'
+# Append to history instead of overwrite
+shopt -s histappend
+# Make multiple commands on a line show up on separate lines
+shopt -s cmdhist
 
 alias ll='ls -al --color=always'
 alias ls='ls --color=always'
