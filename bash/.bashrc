@@ -21,7 +21,7 @@ function _branch {
 }
 
 export PS1='[\u@\h \[\e[94m\]\w\[\e[m\]$(_branch)]\n$ '
-export PATH=$PATH:/home/kjohnston/.local/bin:/home/kjohnston/bin
+export PATH=$PATH:/home/kjohnston/.local/bin:/home/kjohnston/bin:/home/kjohnston/.emacs.d/bin
 export EDITOR=/usr/bin/vim
 
 # History stuff
