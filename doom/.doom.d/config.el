@@ -4,6 +4,7 @@
       doom-font (font-spec :family "Source Code Pro" :size 15)
       doom-variable-pitch-font (font-spec :family "Source Sans Pro")
       doom-big-font (font-spec :family "Source Code Pro" :size 20))
+(global-visual-line-mode 1)
 
 ;; emacs
 (setq dired-dwim-target t)
