@@ -34,3 +34,19 @@
   (setq org-startup-truncated nil)
   (setq org-log-done 'time)
   (setq org-export-with-smart-quotes t))
+
+;; custom key bindings
+;; or, reverting stupid doom decisions
+(map! (:after org
+
+      :map org-mode-map
+      :ni [C-return] #'org-insert-heading-respect-content
+      :ni [C-S-return] #'org-insert-todo-heading-respect-content
+
+      :map outline-mode-map
+      :ni [C-return] #'org-insert-heading-respect-content
+      :ni [C-S-return] #'org-insert-todo-heading-respect-content
+
+      :map evil-org-mode-map
+      :ni [C-return] #'org-insert-heading-respect-content
+      :ni [C-S-return] #'org-insert-todo-heading-respect-content))
