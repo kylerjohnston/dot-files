@@ -1,7 +1,7 @@
 ;;; ~/.doom.d/config.el -*- lexical-binding: t; -*-
 ;; ui
 (setq doom-theme 'doom-vibrant
-      doom-font (font-spec :family "Source Code Pro" :size 15)
+      doom-font (font-spec :family "Source Code Pro" :size 17)
       doom-variable-pitch-font (font-spec :family "Source Sans Pro")
       doom-big-font (font-spec :family "Source Code Pro" :size 20))
 (global-visual-line-mode 1)
@@ -13,7 +13,8 @@
 
 ;; Fedora 30 installs Guile 2.0 and 2.2 as separate packages;
 ;; make Geiser use 2.2
-(setq geiser-guile-binary "/usr/bin/guile2.2")
+(setq geiser-guile-binary "/usr/bin/guile2.2"
+      geiser-active-implementations '(guile))
 
 ;; org-mode
 (after! org
