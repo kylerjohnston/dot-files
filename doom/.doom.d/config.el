@@ -18,7 +18,9 @@
 
 ;; org-mode
 (after! org
-  (add-hook 'org-mode-hook #'visual-line-mode)
+  (add-hook 'org-mode-hook
+            #'(visual-line-mode
+               auto-fill-mode -1))
   (setq org-todo-keywords
         '((sequence "TODO(t)" "IN PROGRESS(p)" "WAITING(w)" "|" "DONE(d)" "CLOSED(c)")))
   (setq org-todo-keyword-faces
