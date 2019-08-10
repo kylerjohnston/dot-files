@@ -1,8 +1,4 @@
 ;;; ~/.doom.d/config.el -*- lexical-binding: t; -*-
-;; custom functions
-(defun light-mode ()
-  (load-theme doom-one-light))
-
 ;; ui
 (setq doom-theme 'doom-vibrant
       doom-font (font-spec :family "Source Code Pro" :size 17)
