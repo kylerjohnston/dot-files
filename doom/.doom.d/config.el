@@ -1,4 +1,8 @@
 ;;; ~/.doom.d/config.el -*- lexical-binding: t; -*-
+;; custom functions
+(defun light-mode ()
+  (load-theme doom-one-light))
+
 ;; ui
 (setq doom-theme 'doom-vibrant
       doom-font (font-spec :family "Source Code Pro" :size 17)
@@ -18,6 +22,7 @@
 
 ;; org-mode
 (after! org
+  ; stop hard line breaks in org mode
   (add-hook 'org-mode-hook
             #'(visual-line-mode
                auto-fill-mode -1))
@@ -40,16 +45,17 @@
 
 ;; custom key bindings
 ;; or, reverting stupid doom decisions
+(map! :ne "SPC m l" (lambda () (interactive) (load-theme 'doom-one-light)))
+
 (map! (:after org
+        :map org-mode-map
+        :ni [C-return] #'org-insert-heading-respect-content
+        :ni [C-S-return] #'org-insert-todo-heading-respect-content
 
-      :map org-mode-map
-      :ni [C-return] #'org-insert-heading-respect-content
-      :ni [C-S-return] #'org-insert-todo-heading-respect-content
+        :map outline-mode-map
+        :ni [C-return] #'org-insert-heading-respect-content
+        :ni [C-S-return] #'org-insert-todo-heading-respect-content
 
-      :map outline-mode-map
-      :ni [C-return] #'org-insert-heading-respect-content
-      :ni [C-S-return] #'org-insert-todo-heading-respect-content
-
-      :map evil-org-mode-map
-      :ni [C-return] #'org-insert-heading-respect-content
-      :ni [C-S-return] #'org-insert-todo-heading-respect-content))
+        :map evil-org-mode-map
+        :ni [C-return] #'org-insert-heading-respect-content
+        :ni [C-S-return] #'org-insert-todo-heading-respect-content))
