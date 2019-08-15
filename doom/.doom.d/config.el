@@ -40,7 +40,10 @@
         org-capture-templates
         '(("t" "TODO" entry
            (file+headline +org-capture-todo-file "Inbox")
-           "* TODO %^{What do you need to do?}\n%?" :prepend t :kill-buffer t)))
+           "* TODO %^{What do you need to do?}\n%?" :prepend t :kill-buffer t)
+          ("n" "Note" entry (file+headline +org-capture-todo-file "Notes")
+           "* %?\n%t"))
+        )
   (setq org-archive-location (concat "archive/archive-" (format-time-string "%Y%m" (current-time)) ".org_archive::"))
   (setq org-startup-truncated nil)
   (setq org-log-done 'time)
