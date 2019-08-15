@@ -3,6 +3,10 @@
   (interactive)
   (load-theme 'doom-one-light))
 
+(defun dark-mode ()
+  (interactive)
+  (load-theme 'doom-vibrant))
+
 ;; ui
 (setq doom-theme 'doom-vibrant
       doom-font (font-spec :family "Source Code Pro" :size 17)
@@ -44,7 +48,8 @@
 
 ;; custom key bindings
 ;; or, reverting stupid doom decisions
-(map! :ne "SPC m l" #'light-mode)
+(map! :ne "SPC m l" #'light-mode
+      :ne "SPC m d" #'dark-mode)
 
 (map! (:after org
         :map org-mode-map
