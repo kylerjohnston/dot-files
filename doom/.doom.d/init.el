@@ -184,7 +184,7 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("ab9456aaeab81ba46a815c00930345ada223e1e7c7ab839659b382b52437b9ea" default))))
+    ("43c808b039893c885bdeec885b4f7572141bd9392da7f0bd8d8346e02b2ec8da" "ab9456aaeab81ba46a815c00930345ada223e1e7c7ab839659b382b52437b9ea" default))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
