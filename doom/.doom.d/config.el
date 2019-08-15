@@ -27,8 +27,8 @@
 ;; org-mode
 (after! org
   ; stop hard line breaks in org mode
-  (add-hook 'org-mode-hook (lambda () (auto-fill-mode -1)))
   (add-hook 'org-mode-hook 'visual-line-mode)
+  (remove-hook 'org-mode-hook 'auto-fill-mode)
   (setq org-todo-keywords
         '((sequence "TODO(t)" "IN PROGRESS(p)" "WAITING(w)" "|" "DONE(d)" "CLOSED(c)")))
   (setq org-todo-keyword-faces
