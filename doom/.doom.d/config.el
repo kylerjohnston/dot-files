@@ -28,6 +28,9 @@
 (after! org
   ; stop hard line breaks in org mode
   (add-hook 'org-mode-hook 'visual-line-mode)
+  (add-hook 'org-mode-hook
+            (lambda()
+              (flyspell-mode 1)))
   (remove-hook 'org-mode-hook 'auto-fill-mode)
   (setq org-todo-keywords
         '((sequence "TODO(t)" "IN PROGRESS(p)" "WAITING(w)" "|" "DONE(d)" "CLOSED(c)")))
@@ -48,6 +51,11 @@
   (setq org-startup-truncated nil)
   (setq org-log-done 'time)
   (setq org-export-with-smart-quotes t))
+
+;; salt
+(add-hook 'salt-mode-hook
+          (lambda()
+            (flyspell-mode 1)))
 
 ;; custom key bindings
 ;; or, reverting stupid doom decisions
