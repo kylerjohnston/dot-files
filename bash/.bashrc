@@ -43,3 +43,4 @@ shopt -s cmdhist
 alias ll='ls -al --color=always'
 alias ls='ls --color=always'
 alias grep='grep --color=auto'
+alias gc-old-dev-proxy='ssh -D 8000 gc-old-dev'
