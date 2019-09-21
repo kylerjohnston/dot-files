@@ -24,9 +24,8 @@ function e {
     emacsclient $1 &
 }
 
-
-export PS1='[\u@\h \[\e[94m\]\w\[\e[m\]$(_branch)]\n$ '
-export PATH=$PATH:$HOME/.local/bin:$HOME/bin:$HOME/.emacs.d/bin
+PS1='[\u@\h \[\e[94m\]\w\[\e[m\]$(_branch)]\n\$ '
+PATH=$PATH:$HOME/.local/bin:$HOME/bin:$HOME/.emacs.d/bin
 export EDITOR=/usr/bin/vim
 
 # History stuff
