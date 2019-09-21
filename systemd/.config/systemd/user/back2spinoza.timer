@@ -1,5 +1,6 @@
 [Unit]
 Description=Execute Borg backup
+OnFailure=failure-notify@%n.service
 
 [Timer]
 OnBootSec=60
