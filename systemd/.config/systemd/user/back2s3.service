@@ -1,0 +1,9 @@
+[Unit]
+Description=Back up Gnucash register to S3
+
+[Service]
+Type=forking
+ExecStart=/home/krj/spooky-scripts/backups/back2s3.sh
+
+[Install]
+WantedBy=default.target
