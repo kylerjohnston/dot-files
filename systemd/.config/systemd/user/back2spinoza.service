@@ -1,9 +1,0 @@
-[Unit]
-Description=Back up home directory to remote Borg repository
-
-[Service]
-Type=forking
-ExecStart=/home/krj/spooky-scripts/backups/back2spinoza.sh krj@descartes:/var/alexandria/spooky
-
-[Install]
-WantedBy=default.target
