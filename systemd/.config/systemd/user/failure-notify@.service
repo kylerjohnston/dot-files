@@ -1,0 +1,6 @@
+[Unit]
+Description=OnFailure notification email for %i
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/failure-notify.sh
