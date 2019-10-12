@@ -19,14 +19,10 @@
 
 ;; lang
 
-;; guile
 ;; Fedora 30 installs Guile 2.0 and 2.2 as separate packages;
 ;; make Geiser use 2.2
 (setq geiser-guile-binary "/usr/bin/guile2.2"
       geiser-active-implementations '(guile))
-
-;; LaTeX
-(setq auto-mode-alist (cons '("\\.latex$" . latex-mode) auto-mode-alist))
 
 ;; org-mode
 (after! org
