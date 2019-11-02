@@ -12,7 +12,9 @@
       doom-font (font-spec :family "Source Code Pro" :size 17)
       doom-variable-pitch-font (font-spec :family "Source Sans Pro")
       doom-big-font (font-spec :family "Source Code Pro" :size 20))
-(global-visual-line-mode 1)
+(global-visual-line-mode 0)
+(remove-hook 'text-mode-hook #'auto-fill-mode)
+(auto-fill-mode 0)
 
 ;; emacs
 (setq dired-dwim-target t)
@@ -31,7 +33,7 @@
 ;; org-mode
 (after! org
   ; stop hard line breaks in org mode
-  (add-hook 'org-mode-hook 'visual-line-mode)
+  ;(add-hook 'org-mode-hook 'visual-line-mode)
   (remove-hook 'org-mode-hook 'auto-fill-mode)
   (setq org-todo-keywords
         '((sequence "TODO(t)" "IN PROGRESS(p)" "WAITING(w)" "|" "DONE(d)" "CLOSED(c)")))
